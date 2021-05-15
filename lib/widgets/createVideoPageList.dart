@@ -3,22 +3,21 @@ import 'package:flutter/material.dart';
 class _TitleDescription extends StatelessWidget {
   const _TitleDescription(
       {@required this.title,
-        @required this.subtitle,
         @required this.date,
         @required this.sportsType});
 
   final String title;
-  final String subtitle;
   final String date;
   final String sportsType;
 
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Expanded(
-          flex: 8,
+          flex: 6,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
@@ -31,23 +30,15 @@ class _TitleDescription extends StatelessWidget {
                 ),
               ),
               const Padding(padding: EdgeInsets.only(bottom: 2.0)),
-              Text(
-                subtitle,
-                maxLines: 5,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 12.0,
-                  color: Colors.black54,
-                ),
-              ),
+
             ],
           ),
         ),
         Expanded(
-          flex: 2,
+          flex: 4,
           child: Row(
-            crossAxisAlignment: CrossAxisAlignment.end,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
               Container(
                 child: Row(
@@ -76,10 +67,6 @@ class _TitleDescription extends StatelessWidget {
               NewsType(
                 sportsType: sportsType,
               ),
-              Icon(
-                Icons.bookmark_border,
-                color: Colors.black,
-              ),
             ],
           ),
         ),
@@ -98,7 +85,7 @@ class NewsType extends StatelessWidget {
       color: Colors.deepOrangeAccent,
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: 6.0,
+          horizontal: MediaQuery.of(context).size.width/20,
           vertical: 2.0,
         ),
         child: Text(sportsType),
@@ -111,36 +98,37 @@ class CustomListItemVideoPage extends StatelessWidget {
   CustomListItemVideoPage({
     @required this.thumbnail,
     @required this.title,
-    @required this.subtitle,
     @required this.date,
     @required this.sportsType,
   });
 
   final Widget thumbnail;
   final String title;
-  final String subtitle;
   final String date;
   final String sportsType;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10.0),
+      padding: const EdgeInsets.symmetric(vertical: 15.0, horizontal: 10.0),
       child: SizedBox(
-        height: 120,
+        height: 60,
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            AspectRatio(
-              aspectRatio: 1.0,
-              child: thumbnail,
+            Expanded(
+              flex: 3,
+              child: AspectRatio(
+                aspectRatio: 1.0,
+                child: thumbnail,
+              ),
             ),
             Expanded(
+              flex: 7,
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(20.0, 0.0, 2.0, 0.0),
                 child: _TitleDescription(
                   title: title,
-                  subtitle: subtitle,
                   date: 'dd-mm-yy',
                   sportsType: sportsType,
                 ),

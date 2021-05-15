@@ -23,22 +23,61 @@ class VideoDescriptionAndRest extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        CustomListItemVideoPage(
-          thumbnail: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(20.0)),
-              image: DecorationImage(
-                image: AssetImage('images/thumbnailimg1.jpeg'),
+        Card(
+          color: Color(0xFFdddddd),
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Center(
+              child: Text(
+                'Information',
+                style: TextStyle(
+                  fontWeight: FontWeight.w700,
+                  fontSize: 18.0,
+                ),
               ),
             ),
           ),
-          title: 'This is heading',
-          subtitle: 'This is subtitle',
+        ),
+        CustomListItemVideoPage(
+          thumbnail: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              image: DecorationImage(
+                image: AssetImage('images/imageVideoPage.jpg'),
+              ),
+            ),
+          ),
+          title: 'This is heading you want to see news kjngkjr ff kgrkm',
           date: 'dd-mm-yy',
           sportsType: 'Info',
-        )
+        ),
+        CustomListItemVideoPage(
+          thumbnail: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              image: DecorationImage(
+                image: AssetImage('images/imageVideoPage.jpg'),
+              ),
+            ),
+          ),
+          title: 'This is heading you want to see news kjngkjr ff kgrkm',
+          date: 'dd-mm-yy',
+          sportsType: 'Info',
+        ),
+        CustomListItemVideoPage(
+          thumbnail: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(5.0)),
+              image: DecorationImage(
+                image: AssetImage('images/imageVideoPage.jpg'),
+              ),
+            ),
+          ),
+          title: 'This is heading you want to see news kjngkjr ff kgrkm',
+          date: 'dd-mm-yy',
+          sportsType: 'Info',
+        ),
       ],
     );
   }
 }
-
