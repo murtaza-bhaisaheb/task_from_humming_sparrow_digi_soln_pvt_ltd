@@ -1,7 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:task_from_internshala/home_page.dart';
+import 'package:task_from_internshala/profile.dart';
 
-class NavBar extends StatelessWidget {
+class NavBar extends StatefulWidget {
+  @override
+  _NavBarState createState() => _NavBarState();
+}
+
+class _NavBarState extends State<NavBar> {
+  Widget bodies = HomePage();
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -28,11 +36,7 @@ class NavBar extends StatelessWidget {
                   ),
                   onTap: () {
                     Navigator.of(context).pop();
-                    Navigator.of(context).push(
-                      MaterialPageRoute(
-                        builder: (context) => HomePage(),
-                      ),
-                    );
+                    bodies = HomePage();
                   },
                 ),
                 Divider(
@@ -58,6 +62,10 @@ class NavBar extends StatelessWidget {
                       fontSize: 18.0,
                     ),
                   ),
+                  onTap: () {
+                    Navigator.of(context).pop();
+                    bodies = ProfilePage();
+                  },
                 ),
               ],
             ),

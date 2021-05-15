@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task_from_internshala/navbar.dart';
-import 'package:task_from_internshala/profile.dart';
 
 class HomePage extends StatelessWidget {
+  static const String routeName = '/HomePage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +10,7 @@ class HomePage extends StatelessWidget {
         backgroundColor: Color(0xFF01301F),
       ),
       drawer: NavBar(),
-      body: Profile(),
+
     );
   }
 }
