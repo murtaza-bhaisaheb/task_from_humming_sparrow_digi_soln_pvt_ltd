@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:task_from_internshala/navbar.dart';
+import 'package:task_from_internshala/navigationDrawer.dart';
 
 class ProfilePage extends StatelessWidget {
   static const String routeName = '/ProfilePage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: NavBar(),
+      appBar: AppBar(
+        backgroundColor: Color(0xFF01301F),
+      ),
+      drawer: NavigationDrawer(),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
