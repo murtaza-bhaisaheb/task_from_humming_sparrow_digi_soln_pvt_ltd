@@ -4,13 +4,13 @@ class _ArticleDescription extends StatelessWidget {
   const _ArticleDescription(
       {@required this.title,
       @required this.subtitle,
-      @required this.author,
-      @required this.sportsType});
+      @required this.date,
+      @required this.newsType});
 
   final String title;
   final String subtitle;
-  final String author;
-  final String sportsType;
+  final String date;
+  final String newsType;
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +74,7 @@ class _ArticleDescription extends StatelessWidget {
                 width: 30.0,
               ),
               NewsType(
-                sportsType: sportsType,
+                newsType: newsType,
               ),
               Icon(
                 Icons.bookmark_border,
@@ -89,9 +89,9 @@ class _ArticleDescription extends StatelessWidget {
 }
 
 class NewsType extends StatelessWidget {
-  final String sportsType;
+  final String newsType;
 
-  NewsType({this.sportsType});
+  NewsType({this.newsType});
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -101,7 +101,7 @@ class NewsType extends StatelessWidget {
           horizontal: 6.0,
           vertical: 2.0,
         ),
-        child: Text(sportsType),
+        child: Text(newsType),
       ),
     );
   }
@@ -112,15 +112,15 @@ class CustomListItem extends StatelessWidget {
     @required this.thumbnail,
     @required this.title,
     @required this.subtitle,
-    @required this.author,
-    @required this.sportsType,
+    @required this.date,
+    @required this.newsType,
   });
 
   final Widget thumbnail;
   final String title;
   final String subtitle;
-  final String author;
-  final String sportsType;
+  final String date;
+  final String newsType;
 
   @override
   Widget build(BuildContext context) {
@@ -141,8 +141,8 @@ class CustomListItem extends StatelessWidget {
                 child: _ArticleDescription(
                   title: title,
                   subtitle: subtitle,
-                  author: 'dd-mm-yy',
-                  sportsType: sportsType,
+                  date: 'dd-mm-yy',
+                  newsType: newsType,
                 ),
               ),
             )
