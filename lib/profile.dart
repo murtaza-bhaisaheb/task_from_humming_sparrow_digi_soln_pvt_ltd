@@ -72,7 +72,7 @@ class DetailsProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: MediaQuery.of(context).size.height / 1.75,
+      height: MediaQuery.of(context).size.height / 2,
       child: ListView(
         children: [
           DetailsProfileData(
@@ -144,7 +144,7 @@ class DetailsProfileData extends StatelessWidget {
                 style: TextStyle(color: Color(0xFF000000), fontSize: 16.0),
               ),
               SizedBox(
-                height: 10.0,
+                height: 5.0,
               ),
             ],
           ),

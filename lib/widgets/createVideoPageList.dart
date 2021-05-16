@@ -2,9 +2,7 @@ import 'package:flutter/material.dart';
 
 class _TitleDescription extends StatelessWidget {
   const _TitleDescription(
-      {@required this.title,
-        @required this.date,
-        @required this.sportsType});
+      {@required this.title, @required this.date, @required this.sportsType});
 
   final String title;
   final String date;
@@ -30,7 +28,6 @@ class _TitleDescription extends StatelessWidget {
                 ),
               ),
               const Padding(padding: EdgeInsets.only(bottom: 2.0)),
-
             ],
           ),
         ),
@@ -85,7 +82,7 @@ class NewsType extends StatelessWidget {
       color: Colors.deepOrangeAccent,
       child: Padding(
         padding: EdgeInsets.symmetric(
-          horizontal: MediaQuery.of(context).size.width/20,
+          horizontal: MediaQuery.of(context).size.width / 20,
           vertical: 2.0,
         ),
         child: Text(sportsType),
@@ -119,7 +116,7 @@ class CustomListItemVideoPage extends StatelessWidget {
             Expanded(
               flex: 3,
               child: AspectRatio(
-                aspectRatio: 1.0,
+                aspectRatio: 16 / 9,
                 child: thumbnail,
               ),
             ),

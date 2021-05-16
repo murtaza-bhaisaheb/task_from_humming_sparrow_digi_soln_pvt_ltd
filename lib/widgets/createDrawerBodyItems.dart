@@ -5,9 +5,8 @@ Widget createDrawerBodyItem(
   return ListTile(
     title: Row(
       children: <Widget>[
-        Icon(icon),
         Padding(
-          padding: EdgeInsets.only(left: 8.0),
+          padding: EdgeInsets.only(left: 10.0),
           child: Text(text),
         )
       ],

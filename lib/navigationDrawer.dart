@@ -12,29 +12,30 @@ class NavigationDrawer extends StatelessWidget {
         children: <Widget>[
           createDrawerHeader(),
           createDrawerBodyItem(
-            icon: Icons.home,
             text: 'Home',
             onTap: () => {
               Navigator.pushReplacementNamed(context, PageRoutes.home),
             },
           ),
+          Divider(
+            color: Colors.black,
+            height: 10,
+          ),
           createDrawerBodyItem(
-            icon: Icons.account_circle,
             text: 'Profile',
             onTap: () => {
               Navigator.pushReplacementNamed(context, PageRoutes.profile),
             },
           ),
+          Divider(
+            color: Colors.black,
+            height: 10,
+          ),
           createDrawerBodyItem(
-            icon: Icons.notifications_active,
             text: 'Videos',
             onTap: () => {
               Navigator.pushReplacementNamed(context, PageRoutes.videos),
             },
-          ),
-          ListTile(
-            title: Text('App version 1.0.0'),
-            onTap: () {},
           ),
         ],
       ),
