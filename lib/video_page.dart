@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:task_from_internshala/navigationDrawer.dart';
+import 'package:task_from_internshala/widgets/chewieListItem.dart';
 import 'package:task_from_internshala/widgets/createVideoPageList.dart';
+import 'package:video_player/video_player.dart';
 
 class VideoPage extends StatelessWidget {
   static const String routeName = '/VideoPage';
@@ -23,16 +25,34 @@ class VideoDescriptionAndRest extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(
       children: [
-        Card(
-          color: Color(0xFFdddddd),
+        Container(
           child: Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(10.0),
+            child: Text(
+              'Videos',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                fontSize: MediaQuery.of(context).size.height / 30,
+              ),
+            ),
+          ),
+        ),
+        ChewieListItem(
+          videoPlayerController: VideoPlayerController.asset(
+            'videos/GirlinWaves.mov',
+          ),
+          looping: true,
+        ),
+        Card(
+          color: Color(0xFFdedede),
+          child: Padding(
+            padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
                 'Information',
                 style: TextStyle(
                   fontWeight: FontWeight.w700,
-                  fontSize: 18.0,
+                  fontSize: MediaQuery.of(context).size.height / 40,
                 ),
               ),
             ),
